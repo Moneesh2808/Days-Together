@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    color-scheme: dark;
+    background-color: #050816;
+  }
+  
+  body {
+    overflow-x: hidden;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+  }
+}
+
+/* Custom romantic scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #050816;
+}
+::-webkit-scrollbar-thumb {
+  background: #251642;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6FAE;
+}
+
+/* Realistic lunar texture styles */
+.moon-texture {
+  background: radial-gradient(circle at 35% 35%, #fffef8 0%, #f4ebd0 40%, #d8caa7 70%, #998c70 100%);
+  box-shadow: 
+    inset -15px -15px 30px rgba(0, 0, 0, 0.4),
+    inset 10px 10px 20px rgba(255, 255, 255, 0.8),
+    0 0 40px rgba(255, 248, 220, 0.5),
+    0 0 100px rgba(210, 230, 255, 0.3),
+    0 0 160px rgba(180, 210, 255, 0.15);
+}
+
+.moon-crater {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(130, 115, 95, 0.25);
+  box-shadow: inset 1px 1px 2px rgba(0, 0, 0, 0.4), 0.5px 0.5px 1px rgba(255, 255, 255, 0.2);
+}
+
+/* Mountain silhouette styles */
+.mountain-layer-back {
+  fill: #0c0820;
+}
+.mountain-layer-mid {
+  fill: #080619;
+}
+.mountain-layer-front {
+  fill: #050411;
+}
+
+/* Fairy light pulsing */
+@keyframes fairyFlicker {
+  0%, 100% {
+    opacity: 0.85;
+    filter: drop-shadow(0 0 3px #FFD98A) drop-shadow(0 0 6px #FFAE42);
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    filter: drop-shadow(0 0 6px #FFF4D0) drop-shadow(0 0 12px #FFD98A) drop-shadow(0 0 20px #FF9E3B);
+    transform: scale(1.15);
+  }
+}
+
+.fairy-bulb {
+  animation: fairyFlicker 3s infinite ease-in-out;
+}
+
+/* Subtle mist drift */
+@keyframes mistDrift {
+  0% {
+    transform: translateX(-5%);
+  }
+  50% {
+    transform: translateX(5%);
+  }
+  100% {
+    transform: translateX(-5%);
+  }
+}
+
+.mist-flow {
+  animation: mistDrift 20s infinite ease-in-out;
+}
+
+/* 3D Balloon Heart lighting */
+.heart-balloon-3d {
+  filter: drop-shadow(0 15px 25px rgba(255, 111, 174, 0.35));
+}
+
+.balloon-highlight {
+  background: radial-gradient(circle at 30% 25%, rgba(255, 255, 255, 0.8) 0%, rgba(255, 255, 255, 0.1) 40%, transparent 60%);
+}
+
+/* Shooting star trail */
+.shooting-star-streak {
+  position: absolute;
+  height: 2px;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 1) 0%, rgba(255, 217, 138, 0.9) 20%, rgba(255, 111, 174, 0.6) 50%, transparent 100%);
+  filter: drop-shadow(0 0 6px #fff) drop-shadow(0 0 12px #FF6FAE);
+  transform-origin: left center;
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+/* Text glow effects */
+.text-glow-moon {
+  text-shadow: 0 0 15px rgba(221, 231, 255, 0.5), 0 0 35px rgba(199, 184, 255, 0.3);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 15px rgba(255, 217, 138, 0.5), 0 0 30px rgba(255, 174, 66, 0.3);
+}
+
+.text-glow-rose {
+  text-shadow: 0 0 15px rgba(255, 111, 174, 0.6), 0 0 35px rgba(255, 111, 174, 0.3);
+}
+
+/* Button pulse heartbeat */
+@keyframes heartBeatGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 111, 174, 0.4), 0 0 30px rgba(255, 111, 174, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 111, 174, 0.7), 0 0 50px rgba(255, 111, 174, 0.35);
+    transform: scale(1.02);
+  }
+}
+
+.btn-romantic-heartbeat {
+  animation: heartBeatGlow 2.8s infinite ease-in-out;
+}
+
+/* Reduced motion preference */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
